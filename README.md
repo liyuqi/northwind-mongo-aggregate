@@ -55,11 +55,13 @@ curl -X DELETE http://127.0.0.12:8006/events/```id```
 
 ### RCurl 測試
 
-library(jsonlite)
-library(RJSONIO)
+```r
+library(jsonlite);
+library(RJSONIO);
 library(plyr);
-events <- getURL("http://127.0.0.1:8006/events", httpheader = "Content-Type: application/json")
+events <- getURL("http://127.0.0.1:8006/events", httpheader = "Content-Type: application/json");
 
-json_file <- fromJSON(events)
+json_file <- fromJSON(events);
 
 ** 轉型測試中...
+```

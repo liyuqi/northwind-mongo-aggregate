@@ -11,6 +11,7 @@
   "url" : "http://thejackalofjavascript.com/nodejs-restify-mongolab-build-rest-api/",
   "devDependencies": {
     "restify": "*",
+    "mongodb" : "*",
     "mongojs": "*",
 	"ip":"*"
   }

@@ -1,11 +1,11 @@
-BTnoderest
+northwind-mongo-aggregate
 ==========
 
 ### 開啟mongod
 
 ```$ mongod --config /etc/mongod.conf --fork --rest```
 
-### 開啟node app3.js
+### 開啟node app.js
 
 ```bash
 $ git clone https://github.com/liyuqi/BTnoderest
@@ -16,52 +16,20 @@ $ node app3.js
 
 ### 瀏覽器測試 
 
-http://127.0.0.1:8006/events
+http://<yourip>:3000/agg2
 
-```myapp lisenting at http://127.0.0.1:8006```
+```myapp lisenting at http://192.168.0.190:3000```
 
+目前可用方法agg1,agg2,agg7
 
+### 回傳樣本
 
-## CURL測試
-
-https://wiki.duraspace.org/display/DURACLOUDDOC/REST+API+Examples+Using+curl
-
-curl參數| 說明
----|---
-curl 常用參數-X/--request [GET|POST|PUT|DELETE|… ] | 使用指定的 http method 發出 http request
--H/--header | 設定 request 裡的header
--i/--include| 顯示 response 的header
--d/--data   | 設定 http parameters
--v/--verbose| 輸出比較多的訊息
--u/--user   | 使用者帳號、密碼
--b/--cookie | cookie 
-  
-** 以下ip:port為預設，需更換為自訂的ip
-
-curl -X GET http://127.0.0.1:8006/events
-
-curl -X GET http://127.0.0.1:8006/events/id
-
-curl -X GET http://127.0.0.1:8006/events.page/3
-
-curl -X GET http://127.0.0.1:8006/events.count
-
-curl -X GET http://127.0.0.1:8006/events.agg
-
-curl -X POST -H "Content-Type: application/json" http://127.0.0.1:8006/events -d '{"level":"info" , "ip":"0.0.0.0"}'
-
-curl -X DELETE http://127.0.0.12:8006/events/```id```
-
-
-### RCurl 測試
-
-```r
-library(jsonlite);
-library(RJSONIO);
-library(plyr);
-events <- getURL("http://127.0.0.1:8006/events", httpheader = "Content-Type: application/json");
-
-json_file <- fromJSON(events);
-
-** 轉型測試中...
+```js
+[{"shippedDate":"1997-09-29T16:00:00.000Z","SubTotal":1768,"orderId":"10684","Year":1997},
+{"shippedDate":"1997-09-30T16:00:00.000Z","SubTotal":375.5,"orderId":"10682","Year":1997},
+{"shippedDate":"1997-09-25T16:00:00.000Z","SubTotal":1682.5,"orderId":"10680","Year":1997},
+{"shippedDate":"1997-09-18T16:00:00.000Z","SubTotal":412.35,"orderId":"10673","Year":1997},
+{"shippedDate":"1997-09-23T16:00:00.000Z","SubTotal":920.1,"orderId":"10671","Year":1997},
 ```
+
+### 特別注意`new Date()`轉型

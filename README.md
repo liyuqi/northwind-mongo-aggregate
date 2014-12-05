@@ -11,7 +11,7 @@ northwind-mongo-aggregate
 $ git clone https://github.com/liyuqi/BTnoderest
 $ cd BTnoderest
 $ sudo npm install
-$ node app3.js
+$ node app.js
 ```
 
 ### 瀏覽器測試 
@@ -32,4 +32,12 @@ http://<yourip>:3000/agg2
 {"shippedDate":"1997-09-23T16:00:00.000Z","SubTotal":920.1,"orderId":"10671","Year":1997},
 ```
 
-### 特別注意`new Date()`轉型
+### 特別注意Date轉型
+
+mongo shell使用`ISODate()`
+
+Javascript 使用`new Date()`
+
+```
+var time = new Date().toString()
+```

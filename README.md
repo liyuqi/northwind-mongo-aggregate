@@ -16,7 +16,7 @@ $ node app.js
 
 ### 瀏覽器測試 
 
-http://<yourip>:3000/agg2
+http://<`yourip`>:3000/agg2
 
 ```myapp lisenting at http://192.168.0.190:3000```
 

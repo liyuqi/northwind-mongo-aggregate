@@ -8,8 +8,8 @@ northwind-mongo-aggregate
 ### 開啟node app.js
 
 ```bash
-$ git clone https://github.com/liyuqi/BTnoderest
-$ cd BTnoderest
+$ git clone https://github.com/liyuqi/northwind-mongo-aggregate
+$ cd northwind-mongo-aggregate
 $ sudo npm install
 $ node app.js
 ```
